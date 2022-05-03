@@ -1,14 +1,22 @@
-new Vue({
-  el: "#vue-app",
-  data: {
-    characters: ["Mario", "Luigi", "Yoshi"],
-    ninjas: [
-      { name: "Ryu", age: 25 },
-      { name: "Yoshi", age: 33 },
-      { name: "Ken", age: 55 },
-    ],
+Vue.component("greeting", {
+  template:
+    '<p>Hey there, I am a {{ name }}. <button v-on:click="changeName">Change name</button></p>',
+  data: function () {
+    return {
+      name: "Yoshi",
+    };
   },
+  methods: {
+    changeName: function () {
+      this.name = "Mario";
+    },
+  },
+});
 
-  methods: {},
-  computed: {},
+new Vue({
+  el: "#vue-app-one",
+});
+
+new Vue({
+  el: "#vue-app-two",
 });
