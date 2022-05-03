@@ -10,15 +10,22 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>Conditionals</h1>
+      <h1>Looping through lists</h1>
 
-      <button v-on:click="error = !error">Toggle error</button>
-      <button v-on:click="success = !success">Toggle Sucess</button>
-      <!-- <p v-if="error">Error message :(</p>
-      <p v-else-if="success">Success message :)</p> -->
+      <ul>
+        <li v-for="character in characters">{{character}}</li>
+      </ul>
 
-      <p v-show="error">Error message :(</p>
-      <p v-show="success">Success message :)</p>
+      <template v-for="(ninja, index) in ninjas">
+        <h3>{{index}} {{ninja.name}}</h3>
+        <p>{{ninja.age}}</p>
+      </template>
+
+      <template v-for="ninja in ninjas">
+        <div v-for="(val,key) in ninja">
+          <p>{{ key }} - {{ value }}</p>
+        </div>
+      </template>
     </div>
 
     <script src="app.js"></script>
