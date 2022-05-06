@@ -5,8 +5,6 @@
       v-on:changeTitle="updateTitle"
     ></app-header>
     <app-ninjas :ninjas="ninjas"></app-ninjas>
-    <hr />
-    <app-ninjas :ninjas="ninjas"></app-ninjas>
     <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
