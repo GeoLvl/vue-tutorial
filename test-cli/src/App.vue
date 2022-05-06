@@ -2,7 +2,7 @@
   <div>
     <app-header
       v-bind:title="title"
-      v-on:changeTitle="updateTitle($event)"
+      v-on:changeTitle="updateTitle"
     ></app-header>
     <app-ninjas :ninjas="ninjas"></app-ninjas>
     <hr />
