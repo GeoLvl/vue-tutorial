@@ -4,7 +4,7 @@ import VueResource from "vue-resource";
 
 Vue.use(VueResource);
 
-//Custon directives
+//Custom directives
 Vue.directive("rainbow", {
   bind(el, binding, vnode) {
     el.style.color =
@@ -28,6 +28,14 @@ Vue.directive("theme", {
   }
 });
 
+//Filters
+Vue.filter("uppercase", function(value) {
+  return value.toUpperCase();
+});
+
+Vue.filter("snippet", function(value) {
+  return value.slice(0, 100) + "...";
+});
 export const bus = new Vue();
 
 new Vue({
